@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+
+:root {
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(0, 0%, 94%);
+  --clr-neutral-300: hsl(0, 0%, 86%);
+  --clr-neutral-500: hsl(0, 1%, 44%);
+  --clr-neutral-900: hsl(0, 0%, 8%);
+
+  --clr-primary-400: hsl(0, 100%, 67%);
+  --clr-primary-500: hsl(259, 100%, 65%);
+
+  --ff-primary: "Poppins", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  --fs-400: 2rem;
+}
+
+/* CSS Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin, Remove default padding, Reset all font sizes and make sure button, forms, etc inherit font */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utilities */
+
+.flex-group {
+  display: flex;
+  gap: var(--gap);
+  /* flex-wrap: wrap; */
+}
+
+/* General Styles */
+
+body {
+  background-color: var(--clr-neutral-200);
+  font-size: var(--fs-400);
+  font-family: var(--ff-primary);
+  color: var(--clr-neutral-90000);
+
+  padding: 5rem 1rem;
+}
+
+@media (min-width: 500px) {
+  body {
+    display: grid;
+    place-items: center;
+  }
+}
+
+main {
+  background-color: var(--clr-neutral-100);
+  max-width: 50rem;
+  padding: 2rem;
+  border-radius: 2rem 2rem 5rem 2rem;
+}
+
+@media (min-width: 600px) {
+  main {
+    padding: 3rem;
+  }
+}
+
+input {
+  width: 100%;
+  border-radius: 0.5rem;
+  /* Is there a math way of thinking to center the text with padding? */
+  padding: 0.75rem 1rem 0.85rem 1rem;
+  font-size: 1.3rem;
+  font-weight: var(--fw-bold);
+  border: 1px solid var(--clr-neutral-500);
+  outline: none;
+}
+
+input:focus {
+  border: 1px solid var(--clr-primary-500);
+}
+
+@media (min-width: 600px) {
+  input {
+    padding: 0.75rem;
+    font-size: 1.5rem;
+  }
+}
+
+input::placeholder {
+  font-size: 1.1rem;
+}
+
+@media (min-width: 600px) {
+  input::placeholder {
+    font-size: 1.5rem;
+  }
+}
+
+label {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--clr-neutral-500);
+  font-size: 1rem;
+}
+
+/* Form */
+
+.age-form {
+  --gap: 1rem;
+  /* border-bottom: 1px solid var(--clr-neutral-300); */
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.age-form::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--clr-neutral-500);
+}
+
+@media (min-width: 500px) {
+  .age-form {
+    --gap: 0rem;
+    max-width: 25rem;
+    margin-right: 10rem;
+  }
+
+  .age-form::after {
+    width: 140%;
+  }
+}
+
+.form-group {
+  --gap: 0.3rem;
+  flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 500px) {
+  .form-group {
+    margin-right: 1rem;
+  }
+}
+
+.form-group label {
+  font-size: 0.8rem;
+}
+
+.form-button {
+  background-color: var(--clr-primary-500);
+  border: none;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  padding: 0.5rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  transition: background-color 0.1s ease-in, translate 0.5s ease-in;
+  cursor: pointer;
+  z-index: 1;
+}
+
+@media (min-width: 500px) {
+  .form-button {
+    right: 0;
+    left: auto;
+    translate: 12rem;
+    transition: background-color 0.1s ease-in, right 0.5s ease-in,
+      translate 0.5s ease-in;
+  }
+}
+
+.form-button:hover,
+.form-button:focus-within {
+  background-color: var(--clr-neutral-900);
+}
+
+.form-button img {
+  aspect-ratio: 1 / 1;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.error-message:empty {
+  display: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.5rem;
+  font-style: italic;
+}
+
+@media (min-width: 600px) {
+  .error-message {
+    font-size: 0.6rem;
+  }
+}
+
+/* Results */
+
+.age-results {
+  font-size: 2.7rem;
+  font-weight: var(--fw-extrabold);
+  font-style: italic;
+}
+
+.age-results > * {
+  margin-top: -1rem;
+}
+
+@media (min-width: 600px) {
+  .age-results {
+    font-size: 5rem;
+  }
+}
+
+.result {
+  gap: 0.5rem;
+}
+
+.number {
+  color: var(--clr-primary-500);
+  font-size: 2.8rem;
+}
+
+@media (min-width: 600px) {
+  .number {
+    font-size: 5rem;
+  }
+}
+
+/* Error Styles */
+
+.error-br {
+  border-color: red;
+}
+
+.error-label {
+  color: red;
+}

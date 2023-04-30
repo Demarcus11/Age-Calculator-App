@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Age calculator app</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <form class="age-form | flex-group" action="#" id="age-form">
+
+      <div class="form-group | flex-group">
+        <label class="form-label" for="day">Day</label>
+        <input class="form-input" type="text" placeholder="DD" name="day" onchange="validateDay()"
+          onblur="clearError()">
+        <p class="empty-error error-message" id="day-empty"></p>
+        <p class="invalid-error error-message" id="day-error"></p>
+      </div>
+
+      <div class="form-group | flex-group">
+        <label class="form-label" for="month">Month</label>
+        <input class="form-input" type="text" placeholder="MM" name="month" onchange="validateMonth()"
+          onblur="clearError()">
+        <p class="empty-error error-message" id="month-empty"></p>
+        <p class="invalid-error error-message" id="month-error"></p>
+      </div>
+
+      <div class="form-group | flex-group">
+        <label class="form-label" for="year">Year</label>
+        <input class="form-input" type="text" placeholder="YYYY" name="year" onchange="validateYear()"
+          onblur="clearError()">
+        <p class="empty-error error-message" id="year-empty"></p>
+        <p class="invalid-error error-message" id="year-error"></p>
+      </div>
+
+      <button type="submit" form="age-form" class="form-button">
+        <img src="assets/images/icon-arrow.svg" alt="Submit Arrow">
+      </button>
+    </form>
+
+    <div class="age-results">
+      <div class="result | flex-group">
+        <span class="number" data-number="123">- -</span>
+        <span> years</span>
+      </div>
+
+
+      <div class="result | flex-group">
+        <span class="number" data-number="456">- -</span>
+        <span> months</span>
+      </div>
+
+      <div class="result | flex-group">
+        <span class="number" data-number="789">- -</span>
+        <span> days</span>
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+
+</html>
