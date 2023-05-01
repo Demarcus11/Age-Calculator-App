@@ -16,34 +16,36 @@
 <body>
   <main>
     <form class="age-form | flex-group" action="#" id="age-form">
+      <fieldset>
+        <legend class="visually-hidden">Date</legend>
+        <div class="form-group | flex-group">
+          <label class="form-label" for="day">Day</label>
+          <input class="form-input" id="day" type="text" placeholder="DD" name="day" onchange="validateDay()"
+            onblur="clearError()">
+          <p class="empty-error error-message" id="day-empty"></p>
+          <p class="invalid-error error-message" id="day-error"></p>
+        </div>
 
-      <div class="form-group | flex-group">
-        <label class="form-label" for="day">Day</label>
-        <input class="form-input" type="text" placeholder="DD" name="day" onchange="validateDay()"
-          onblur="clearError()">
-        <p class="empty-error error-message" id="day-empty"></p>
-        <p class="invalid-error error-message" id="day-error"></p>
-      </div>
+        <div class="form-group | flex-group">
+          <label class="form-label" for="month">Month</label>
+          <input class="form-input" day="month" type="text" placeholder="MM" name="month" onchange="validateMonth()"
+            onblur="clearError()">
+          <p class="empty-error error-message" id="month-empty"></p>
+          <p class="invalid-error error-message" id="month-error"></p>
+        </div>
 
-      <div class="form-group | flex-group">
-        <label class="form-label" for="month">Month</label>
-        <input class="form-input" type="text" placeholder="MM" name="month" onchange="validateMonth()"
-          onblur="clearError()">
-        <p class="empty-error error-message" id="month-empty"></p>
-        <p class="invalid-error error-message" id="month-error"></p>
-      </div>
+        <div class="form-group | flex-group">
+          <label class="form-label" for="year">Year</label>
+          <input class="form-input" id="year" type="text" placeholder="YYYY" name="year" onchange="validateYear()"
+            onblur="clearError()">
+          <p class="empty-error error-message" id="year-empty"></p>
+          <p class="invalid-error error-message" id="year-error"></p>
+        </div>
 
-      <div class="form-group | flex-group">
-        <label class="form-label" for="year">Year</label>
-        <input class="form-input" type="text" placeholder="YYYY" name="year" onchange="validateYear()"
-          onblur="clearError()">
-        <p class="empty-error error-message" id="year-empty"></p>
-        <p class="invalid-error error-message" id="year-error"></p>
-      </div>
-
-      <button type="submit" form="age-form" class="form-button">
-        <img src="assets/images/icon-arrow.svg" alt="Submit Arrow">
-      </button>
+        <button type="submit" form="age-form" class="form-button" aria-label="Submit form">
+          <img src="assets/images/icon-arrow.svg" alt="">
+        </button>
+      </fieldset>
     </form>
 
     <div class="age-results">
